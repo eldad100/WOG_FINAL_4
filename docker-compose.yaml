@@ -5,7 +5,7 @@ services:
   build: .
   image: eldadtzabari/wog_scores_flask
   ports:
-    - "8888:5555"
+    - "8777:5000"
   volumes:
    - ./Scores.txt:/app/Scores.txt
 
