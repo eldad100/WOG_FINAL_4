@@ -9,6 +9,6 @@ COPY Utils.py .
 
 COPY Scores.txt .
 
-EXPOSE 7000
+EXPOSE 5000
 
 CMD ["python", "MainScores.py"]
