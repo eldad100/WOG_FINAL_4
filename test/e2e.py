@@ -26,6 +26,6 @@ def main_function():
         print('test failed')
         sys.exit(-1)
 
-if __name__ == '__main__':
-    main_function()
+
+main_function()
 
