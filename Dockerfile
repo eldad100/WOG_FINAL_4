@@ -2,8 +2,8 @@ FROM python:3.6-alpine
 
 WORKDIR /app
 
-RUN pip install flask
-RUN pip install selenium
+RUN pip install flask \
+    && pip install selenium
 
 COPY MainScores.py .
 COPY Utils.py .
