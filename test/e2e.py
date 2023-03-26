@@ -17,7 +17,7 @@ def test_scores_service(url):
 
     return is_valid_score
 def main_function():
-    url = "http://localhost:5000"
+    url = "http://172.10.0.0:5000"
     is_valid_score = test_scores_service(url)
     if is_valid_score:
         print("The test passed: " + str(is_valid_score))
