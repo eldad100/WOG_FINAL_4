@@ -6,9 +6,8 @@ RUN pip install flask
 
 COPY MainScores.py .
 COPY Utils.py .
+COPY Scores.txt /app
 
-COPY Scores.txt .
-
-EXPOSE 5001
+EXPOSE 5555
 
 CMD ["python", "MainScores.py"]
