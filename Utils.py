@@ -1,7 +1,7 @@
 import os
 import time
 
-SCORES_FILE_NAME = 'Scores/Scores.txt'
+SCORES_FILE_NAME ='./Scores.txt'
 
 BAD_RETURN_CODE = "Error code 200"
 

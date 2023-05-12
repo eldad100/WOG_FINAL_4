@@ -1,21 +1,7 @@
-# from Utils import SCORES_FILE_NAME
-# import os
+from Utils import SCORES_FILE_NAME
+import os
 #
-# def add_score(difficulty):
-#     POINTS_OF_WINNING = (difficulty * 3) + 5
-#     if os.path.exists(SCORES_FILE_NAME):
-#         with open(SCORES_FILE_NAME, 'r') as current_score:
-#             score = current_score.read()
-#         with open(SCORES_FILE_NAME, 'w') as write_score:
-#             scores = write_score.write(str(POINTS_OF_WINNING))
-#
-#
-#     new_score = score + str(POINTS_OF_WINNING)
-#     with open(SCORES_FILE_NAME, "w") as scor:
-#         scor.write(new_score)
-#     return new_score
-import os  # import the "os" module
-from Utils import SCORES_FILE_NAME  # import the "SCORES_FILE_NAME" constant from the "Utils" module
+
 
 # define a function named "add_score" that takes one argument: lvl_sel
 def add_score(lvl_sel):
