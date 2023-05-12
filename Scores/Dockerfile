@@ -1,15 +1,16 @@
-FROM python:3.6
+FROM python:3.8
 
 WORKDIR /app
 
 
 RUN pip install flask
-    && pip install selenium
+
 
 COPY MainScores.py .
-COPY ../Utils.py .
+COPY /Utils.py .
+COPY Scores/Scores.txt .
 COPY Scores.txt /app
 
-EXPOSE 5001
+EXPOSE 6000
 
 CMD ["python", "MainScores.py"]
