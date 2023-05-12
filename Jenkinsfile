@@ -1,7 +1,5 @@
 pipeline {
-pipeline {
     agent any # Use any available agent to run the pipeline
-
     stages { # Define the stages in the pipeline
         stage('Build') { # First stage: Build
             steps {
