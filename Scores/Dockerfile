@@ -4,7 +4,7 @@ WORKDIR /app
 
 
 RUN pip install flask
-RUN pip install selenium
+RUN pip3 install selenium
 
 COPY /Scores/MainScores.py .
 COPY Utils.py .
