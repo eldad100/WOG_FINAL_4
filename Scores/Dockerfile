@@ -6,9 +6,9 @@ WORKDIR /app
 RUN pip install flask \
     && pip install selenium
 
-COPY MainScores.py .
-COPY ../Utils.py .
-COPY Scores.txt /app
+COPY /Scores/MainScores.py .
+COPY Utils.py .
+#COPY Scores.txt /app
 
 EXPOSE 5555
 
