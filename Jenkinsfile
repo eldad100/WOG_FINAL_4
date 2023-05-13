@@ -24,7 +24,14 @@ pipeline {
                 }
             }
         }
-
+        stage('Login to Docker') {
+            steps {
+                // use Jenkins credentials to login to Docker registry
+                withCredentials([usernamePassword(credentialsId: 'docker-creds', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
+                    sh "docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}"
+                }
+            }
+        }
         stage('Finalize') { 
             steps {
                 dir('Scores') { 
