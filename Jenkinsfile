@@ -24,12 +24,6 @@ pipeline {
                 }
             }
         }
-        stage('Login to Docker') {
-            steps {
-
-                }
-            }
-        }
         stage('Finalize') { 
             steps {
                 dir('Scores') {
