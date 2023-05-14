@@ -26,15 +26,16 @@ pipeline {
         }
         stage('Login to Docker') {
             steps {
-                // use Jenkins credentials to login to Docker registry
-                withCredentials([usernamePassword(credentialsId: '003316d4-6108-4f65-88fb-d26b9922c254', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
-                    sh "docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}"
+
                 }
             }
         }
         stage('Finalize') { 
             steps {
-                dir('Scores') { 
+                dir('Scores') {
+                    // use Jenkins credentials to login to Docker registry
+                    withCredentials([usernamePassword(credentialsId: '003316d4-6108-4f65-88fb-d26b9922c254', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
+                    sh "docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}"
                     sh 'docker-compose down' 
                     sh 'docker-compose push' 
                 }
