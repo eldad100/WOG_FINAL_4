@@ -1,6 +1,12 @@
 pipeline {
     agent any
     stages {
+        stage('Checkout') {
+            steps {
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'your-credential-id', url: 'https://github.com/eldad100/World-of-Games.git']]])
+            }
+        }
+
         stage('Build') {
             steps {
                 dir('Scores') {
@@ -13,14 +19,6 @@ pipeline {
             steps {
                 dir('Scores') {
                     sh 'docker-compose up -d'
-                }
-            }
-        }
-
-        stage('Checkout') {
-            steps {
-                dir('Scores') {
-                    checkout scm
                 }
             }
         }
