@@ -17,6 +17,14 @@ pipeline {
             }
         }
 
+        stage('Checkout') {
+            steps {
+                dir('Scores') {
+                    checkout scm
+                }
+            }
+        }
+
         stage('Test') {
             steps {
                 dir('Scores') {
