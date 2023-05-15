@@ -1,5 +1,4 @@
-[12:09, 14/05/2023] Eldad🌟 Tzabari: אני בדלת
-[13:14, 14/05/2023] Eldad🌟 Tzabari: pipeline {
+pipeline {
     agent any
     stages {
         stage('Build') {
