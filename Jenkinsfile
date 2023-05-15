@@ -1,12 +1,7 @@
-pipeline {
+[12:09, 14/05/2023] Eldad🌟 Tzabari: אני בדלת
+[13:14, 14/05/2023] Eldad🌟 Tzabari: pipeline {
     agent any
     stages {
-        stage('Checkout') {
-            steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'your-credential-id', url: 'https://github.com/eldad100/World-of-Games.git']]])
-            }
-        }
-
         stage('Build') {
             steps {
                 dir('Scores') {
@@ -26,7 +21,7 @@ pipeline {
         stage('Test') {
             steps {
                 dir('Scores') {
-                    sh 'docker-compose exec -T flask_app python3 e2e.py'
+                    sh 'docker-compose exec -it flask_app python3 e2e.py'
                 }
             }
         }
@@ -43,5 +38,5 @@ pipeline {
                 }
             }
         }
-    }
+    }pipeline
 }
