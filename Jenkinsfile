@@ -20,7 +20,7 @@ pipeline {
         stage('Test') {
             steps {
                 dir('Scores') {
-                    sh 'docker-compose exec -it flask_app python3 e2e.py'
+                    sh 'docker-compose exec flask_app python3 e2e.py'
                 }
             }
         }
@@ -37,5 +37,5 @@ pipeline {
                 }
             }
         }
-pipeline
+    }
 }
